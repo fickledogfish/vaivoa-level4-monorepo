@@ -28,7 +28,7 @@ extension UITableViewCell {
         }
     }
 
-    func contentConfigurationOrDefault() -> UIListContentConfiguration {
+    fileprivate func contentConfigurationOrDefault() -> UIListContentConfiguration {
         contentConfiguration as? UIListContentConfiguration ?? defaultContentConfiguration()
     }
 }

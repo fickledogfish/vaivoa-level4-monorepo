@@ -36,8 +36,8 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let petition = petitions[indexPath.row]
 
-        // cell.textLabel?.text = "Title goes here"
-        // cell.detailTextLabel?.text = "Subtitle goes here"
+        //cell.textLabel?.text = petition.title
+        //cell.detailTextLabel?.text = petition.body
 
         cell.textLabel = petition.title
         cell.detailTextLabel = petition.body
