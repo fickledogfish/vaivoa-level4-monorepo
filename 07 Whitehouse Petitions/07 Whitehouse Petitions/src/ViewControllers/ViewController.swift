@@ -3,14 +3,27 @@ import UIKit
 class ViewController: UITableViewController {
     var petitions = [Petition]()
 
-    // let urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
-    let urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let url = URL(string: urlString) else { return }
-        guard let data = try? Data(contentsOf: url) else { return }
+        let urlString: String
+
+        if navigationController?.tabBarItem.tag == 0 {
+            // urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
+            urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
+        } else {
+            // urlString = "https://api.whitehouse.gov/v1/petitions.json?signatureCountFloor=10000&limit=100"
+            urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
+        }
+
+        guard let url = URL(string: urlString) else {
+            showError()
+            return
+        }
+        guard let data = try? Data(contentsOf: url) else {
+            showError()
+            return
+        }
 
         parse(json: data)
     }
@@ -36,6 +49,12 @@ class ViewController: UITableViewController {
         let detailViewController = DetailViewController()
         detailViewController.detailItem = petitions[indexPath.row]
         navigationController?.pushViewController(detailViewController, animated: true)
+    }
+
+    func showError() {
+        let alertController = UIAlertController(title: "Loading error", message: "There was a problem loading the feed; please check your connection and try again", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alertController, animated: true)
     }
 
     func parse(json data: Data) {
