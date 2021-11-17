@@ -16,6 +16,7 @@
 		0ED6EDC6274588CC00D4857C /* UITableViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6EDC5274588CC00D4857C /* UITableViewCellExtensions.swift */; };
 		0ED6EDC82745907000D4857C /* Petition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6EDC72745907000D4857C /* Petition.swift */; };
 		0ED6EDCA274590E000D4857C /* Petitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6EDC9274590E000D4857C /* Petitions.swift */; };
+		0ED6EDCD2745935C00D4857C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6EDCC2745935C00D4857C /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0ED6EDC5274588CC00D4857C /* UITableViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtensions.swift; sourceTree = "<group>"; };
 		0ED6EDC72745907000D4857C /* Petition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petition.swift; sourceTree = "<group>"; };
 		0ED6EDC9274590E000D4857C /* Petitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petitions.swift; sourceTree = "<group>"; };
+		0ED6EDCC2745935C00D4857C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +76,10 @@
 			isa = PBXGroup;
 			children = (
 				0ED6EDCB274592EF00D4857C /* DTOs */,
+				0ED6EDCE2745936700D4857C /* ViewControllers */,
 				0ED6EDC4274588B600D4857C /* extensions */,
 				0ED6EDAE2745800B00D4857C /* AppDelegate.swift */,
 				0ED6EDB02745800B00D4857C /* SceneDelegate.swift */,
-				0ED6EDB22745800B00D4857C /* ViewController.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -106,6 +108,15 @@
 				0ED6EDC9274590E000D4857C /* Petitions.swift */,
 			);
 			path = DTOs;
+			sourceTree = "<group>";
+		};
+		0ED6EDCE2745936700D4857C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0ED6EDB22745800B00D4857C /* ViewController.swift */,
+				0ED6EDCC2745935C00D4857C /* DetailViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +196,7 @@
 				0ED6EDC6274588CC00D4857C /* UITableViewCellExtensions.swift in Sources */,
 				0ED6EDAF2745800B00D4857C /* AppDelegate.swift in Sources */,
 				0ED6EDB12745800B00D4857C /* SceneDelegate.swift in Sources */,
+				0ED6EDCD2745935C00D4857C /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
