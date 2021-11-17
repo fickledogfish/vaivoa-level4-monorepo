@@ -29,6 +29,15 @@ extension UITableViewCell {
     }
 
     fileprivate func contentConfigurationOrDefault() -> UIListContentConfiguration {
-        contentConfiguration as? UIListContentConfiguration ?? defaultContentConfiguration()
+        var contentConfig = contentConfiguration as? UIListContentConfiguration
+
+        if contentConfig == nil {
+            contentConfig = defaultContentConfiguration()
+
+            contentConfig!.textProperties.numberOfLines = 1
+            contentConfig!.secondaryTextProperties.numberOfLines = 3
+        }
+
+        return contentConfig!
     }
 }
