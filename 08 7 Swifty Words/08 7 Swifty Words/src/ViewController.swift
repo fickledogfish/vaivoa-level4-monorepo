@@ -193,7 +193,22 @@ class ViewController: UIViewController {
 
     @objc func submitTapped(_ sender: UIButton) {
         guard let answerText = currentAnswer.text else { return }
-        guard let solutionPosition = solutions.firstIndex(of: answerText) else { return }
+        guard let solutionPosition = solutions.firstIndex(of: answerText) else {
+            let alertController = UIAlertController(
+                title: "Wrong guess",
+                message: "Your guess is wrong",
+                preferredStyle: .alert
+            )
+            alertController.addAction(UIAlertAction(
+                title: "k",
+                style: .default,
+                handler: { [weak self] _ in
+                    self?.clearTapped(sender)
+                }
+            ))
+            present(alertController, animated: true)
+            return
+        }
 
         activatedButtons.removeAll()
 
