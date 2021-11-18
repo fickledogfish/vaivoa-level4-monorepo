@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E37CE2C2746C5B400CF7871 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E37CE2B2746C5B400CF7871 /* StringExtensions.swift */; };
 		0ED6EDAF2745800B00D4857C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6EDAE2745800B00D4857C /* AppDelegate.swift */; };
 		0ED6EDB12745800B00D4857C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6EDB02745800B00D4857C /* SceneDelegate.swift */; };
 		0ED6EDB32745800B00D4857C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6EDB22745800B00D4857C /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E37CE2B2746C5B400CF7871 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = "07 Whitehouse Petitions/src/extensions/StringExtensions.swift"; sourceTree = SOURCE_ROOT; };
 		0ED6EDAB2745800B00D4857C /* 07 Whitehouse Petitions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "07 Whitehouse Petitions.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ED6EDAE2745800B00D4857C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0ED6EDB02745800B00D4857C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		0ED6EDC4274588B600D4857C /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0E37CE2B2746C5B400CF7871 /* StringExtensions.swift */,
 				0ED6EDC5274588CC00D4857C /* UITableViewCellExtensions.swift */,
 			);
 			path = extensions;
@@ -190,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E37CE2C2746C5B400CF7871 /* StringExtensions.swift in Sources */,
 				0ED6EDC82745907000D4857C /* Petition.swift in Sources */,
 				0ED6EDCA274590E000D4857C /* Petitions.swift in Sources */,
 				0ED6EDB32745800B00D4857C /* ViewController.swift in Sources */,
