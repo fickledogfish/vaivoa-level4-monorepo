@@ -34,16 +34,18 @@ class ViewController: UITableViewController {
             urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
         }
 
-        guard let url = URL(string: urlString) else {
-            showError()
-            return
-        }
-        guard let data = try? Data(contentsOf: url) else {
-            showError()
-            return
-        }
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let url = URL(string: urlString) else {
+                self?.showError()
+                return
+            }
+            guard let data = try? Data(contentsOf: url) else {
+                self?.showError()
+                return
+            }
 
-        parse(json: data)
+            self?.parse(json: data)
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -120,9 +122,11 @@ class ViewController: UITableViewController {
     }
 
     func showError() {
-        let alertController = UIAlertController(title: "Loading error", message: "There was a problem loading the feed; please check your connection and try again", preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: .default))
-        present(alertController, animated: animated)
+        DispatchQueue.main.async { [weak self] in
+            let alertController = UIAlertController(title: "Loading error", message: "There was a problem loading the feed; please check your connection and try again", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: .default))
+            self?.present(alertController, animated: self?.animated ?? true)
+        }
     }
 
     func parse(json data: Data) {
@@ -133,6 +137,8 @@ class ViewController: UITableViewController {
         loadedPetitions = decodedPetitions.results
         displayedPetitions = loadedPetitions
 
-        tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 }
